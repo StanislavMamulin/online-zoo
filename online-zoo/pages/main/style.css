@@ -7,9 +7,14 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 3;
 }
 
 #nav-content {
+    width: 1160px;
+}
+
+#content {
     width: 1160px;
 }
 
@@ -81,4 +86,83 @@ nav {
 
 #about {
     color: #F9804B;
+}
+
+/* Section 1 - Watch online */
+#watch-online {
+   display: flex;
+   justify-content: center;
+}
+
+#watch-online-content {
+    background: url(../../assets/images/Giant\ Panda.png);
+    width: 1600px;
+    height: 780px;
+    position: absolute;
+    top: 0px;
+    z-index: -1;
+}
+
+#circle {
+    width: 465px;
+    height: 465px;
+    border-radius: 232.5px;
+
+    position: absolute;
+    left: calc(50% - 465px/2 + 239.5px);
+    top: 92px;
+    background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+}
+
+#watch-description {
+    width: 500px;
+    height: 400px;
+    position: absolute;
+    left: calc(50% - 500.31px/2 + 330.15px);
+    top: 166px;
+    margin: 0;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 106px;
+    line-height: 75%;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+}
+
+.highlighted-text {
+    color: #FFEE2E;
+}
+
+#watch-button {
+    position: absolute;
+    width: 298px;
+    height: 54px;
+    left: calc(50% - 298px/2 + 332px);
+    top: 626px;
+
+    background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+    border-radius: 25px;
+    border-width: 0px;
+}
+
+#watch-button:hover {
+    background: #E47209;
+}
+
+#watch-button:active {
+    background: #4B9200;
+}
+
+#watch-button-text {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
 }

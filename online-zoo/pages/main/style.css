@@ -7,7 +7,11 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 3;
+    
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
 }
 
 #nav-content {
@@ -98,9 +102,6 @@ nav {
     background: url(../../assets/images/Giant\ Panda.png);
     width: 1600px;
     height: 780px;
-    position: absolute;
-    top: 0px;
-    z-index: -1;
 }
 
 #circle {

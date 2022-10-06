@@ -227,3 +227,171 @@ nav {
 .backstage-text4 {
     margin-bottom: 0px;
 }
+
+/* Section 3 - The pets */
+
+#pets {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 1600px;
+    margin: 0px auto;
+}
+
+#pets-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding-bottom: 100px;
+}
+
+#pets-images {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow-button {
+    width: 62px;
+    height: 62px;
+    border: none;
+    border-radius: 31px;
+
+    margin: 20px;
+
+    background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+}
+
+.arrow-button:hover {
+    background: #E47209;
+}
+
+.arrow-button:active {
+    background: #4B9200;
+}
+
+#pets-images-block {
+    display: grid;
+    grid-template-columns: repeat(3, 366px);
+    grid-template-rows: repeat(2, 426px);
+    gap: 20px 30px;
+
+    margin-bottom: 80px;
+}
+
+.pets-card {
+    width: 366px;
+    height: 426px;
+    overflow: hidden;
+
+    background: linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(90deg, #FA8C32, #FE9013) border-box;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+.pets-card:hover .pets-img {
+    transform: scale(1.1);
+    opacity: 0.5;
+}
+
+.pets-card:hover .pets-info {
+    transform: translateY(-60px);
+    color: white;
+}
+
+.pets-img {
+    width: 366px;
+    height: 366px;
+    margin: 0px;
+
+    transition: all 300ms;
+}
+
+.pets-img-wrapper {
+    overflow: hidden;
+    height: 366px;
+    margin: 0;
+    background-color: black;
+}
+
+.pets-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 8px 10px 14px 16px;
+
+    transition: all 300ms;
+}
+
+.pets-text-info {
+    margin: 0px;
+    padding: 0px;
+}
+
+.pets-name {
+    text-transform: uppercase;
+    margin: 0px;
+    padding: 0px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+}
+
+
+.pets-location {
+    margin: 0;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 120%;
+}
+
+#choose-favorite {
+    background: #FE9013;
+    color: white;
+
+    width: 298px;
+    height: 54px;
+    border-radius: 25px;
+    border: none;
+
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#choose-favorite:hover {
+    background: #E47209;
+}
+
+#choose-favorite:active {
+    background: #4B9200;
+}
+
+#pets-right-bg-image {
+    position: absolute;
+    top: 831px;
+    right: 0px;
+}
+
+#pets-left-bg-image {
+    position: absolute;
+    top: 646px;
+    left: 0px;
+}

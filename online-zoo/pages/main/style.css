@@ -20,6 +20,7 @@ nav {
 
 .content {
     width: 1160px;
+    margin: 0 auto;
 }
 
 .menu {
@@ -394,4 +395,178 @@ nav {
     position: absolute;
     top: 646px;
     left: 0px;
+}
+
+/* Section 4 - Pick and feed */
+
+#pick-and-feed {
+    background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
+opacity: 0.9;
+    padding: 69px 0 100px 0;
+}
+
+.paf-content {
+    border-radius: 20px;
+    background: rgba(253, 253, 255, 0.52);
+    backdrop-filter: blur(2px);
+    padding-top: 41px;
+    padding-bottom: 59px;
+}
+
+.paf-title {
+    color: #FE9013;
+
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 120%;
+    text-align: center;
+
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+#paf-description-block {
+    padding-left: 99px;
+    margin-bottom: 60px;
+}
+
+.paf-subtitle {
+    color: #333B41;
+
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+
+    margin-bottom: 40px;
+}
+
+.paf-description {
+    color: #333B41;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+
+    margin-bottom: 10px;
+}
+
+.paf-description-regular {
+    color: #333B41;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+
+    width: 863px;
+}
+
+#paf-description-link {
+    color: #333B41;
+    text-decoration: none;
+    border-bottom: solid 1px #FE9013;
+}
+
+.paf-subhead {
+    color: #333B41;
+
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 130%;
+
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+#paf-steps {
+    display: flex;
+    padding: 0px 198px;
+
+    margin-bottom: 60px;
+
+    position: relative;
+}
+
+.paf-step-card {
+    width: 168px;
+    height: 244px;
+
+    border-radius: 5px;
+}
+
+.paf-step-img-wrapper {
+    width: 168px;
+    height: 168px;
+
+    background: white;
+    border: solid 1px #F9804B;
+    border-radius: 5px;
+
+    position: relative;
+}
+
+.paf-step-img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+
+    margin-bottom: 30px;
+}
+
+.paf-step-description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    
+    color: #333B41;
+}
+
+.paf-next-step-arrow {
+    margin: 0 30px;
+    position: relative;
+    top: -40px;
+}
+
+.paf-feed-button {
+    display: block;
+    margin: 0 auto;
+}
+
+.text {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+}
+
+.button {
+    width: 298px;
+    height: 54px;
+    background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+    border-radius: 25px;
+
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    color: white;
+
+    border: none;
+}
+
+.button:hover {
+    background: #E47209;
+}
+
+.button:active {
+    background: #4B9200;
+}
+
+.buttons-link {
+    text-decoration: none;
+    color: white;
 }

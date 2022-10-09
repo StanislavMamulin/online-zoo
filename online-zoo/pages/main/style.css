@@ -876,7 +876,7 @@ opacity: 0.9;
     nav {
         position: fixed;
         top: 0px;
-        width: 100%;
+        width: 100vw;
         height: 34px;
         display: flex;
         justify-content: space-between;

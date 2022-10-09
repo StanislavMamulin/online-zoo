@@ -689,3 +689,10 @@ opacity: 0.9;
     right: 0px;
     bottom: -130px;
 }
+
+/* Footer */
+
+#footer-stub {
+    display: block;
+    margin: 0px auto;
+}

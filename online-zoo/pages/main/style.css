@@ -367,6 +367,7 @@ nav {
 
     width: 298px;
     height: 54px;
+    margin-bottom: 140px;
     border-radius: 25px;
     border: none;
 
@@ -389,13 +390,13 @@ nav {
 
 #pets-right-bg-image {
     position: absolute;
-    top: 831px;
+    bottom: 0px;
     right: 0px;
 }
 
 #pets-left-bg-image {
     position: absolute;
-    top: 646px;
+    bottom: 0px;
     left: 0px;
 }
 
@@ -798,5 +799,61 @@ opacity: 0.9;
 
     .hamburger {
         display: block;
+    }
+}
+
+/* max 1000 px screen */
+
+@media (max-width: 1000px) {
+    #pets {
+        width: 100vw;
+    }
+    
+    #pets-content {
+        padding-bottom: 0px;
+    }
+    
+    #pets-images-block {
+        grid-template-columns: repeat(3, 29.4vw);
+        grid-template-rows: repeat(2, 35.4vw);
+        gap: 102px 29px;
+
+        position: relative;
+    }
+    
+    .pets-card {
+        width: 100%;
+        height: 100%;
+    }
+     
+    .pets-img-wrapper {
+        height: 294px;
+    }
+    
+    .pets-img {
+        width: 294px;
+        height: 294px;
+    }
+
+    #pets-next-image {
+        margin: 0;
+        position: absolute;
+        right: 35.3%;
+        top: 34.5%;
+    }
+
+    #pets-prev-image {
+        margin: 0;
+        position: absolute;
+        left: 35.3%;
+        top: 34.5%;
+    }
+    
+    #pets-right-bg-image {
+        max-height: 180px;
+    }
+    
+    #pets-left-bg-image {
+        max-height: 202px;
     }
 }

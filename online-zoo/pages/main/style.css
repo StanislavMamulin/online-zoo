@@ -570,3 +570,122 @@ opacity: 0.9;
     text-decoration: none;
     color: white;
 }
+
+/* Section 5 - Testimonials */
+
+#testimonials {
+    position: relative;
+    width: 1600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.testimonials-title {
+    text-align: center;
+}
+
+.testimonials-cards-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-bottom: 21px;
+}
+
+.testimonials-card {
+    border-radius: 20px;
+    width: 268px;
+    height: 391px;
+
+    padding: 15px 15px 19px 16px;
+    box-sizing: border-box;
+
+    background: linear-gradient(#F1F3F2, #F1F3F2) padding-box,
+    linear-gradient(315deg, #FEBDABBD, #FEBCAEBD, #F3A9F8A8, #E0D8F0, #EAF7FE, #EAF7FE) border-box;
+    border: 2px solid transparent;
+    border-radius: 20px;
+}
+
+.testimonials-card-info {
+    display: flex;
+    direction: row;
+
+    margin-bottom: 11px;
+}
+
+.testimonials-user-icon {
+    margin-right: 10px;
+}
+
+.testimonials-username {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    margin: 0;
+    margin-bottom: 1px;
+}
+
+.testimonials-details {
+    display: flex;
+}
+
+.testimonials-details-text {
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 120%;
+    color: #BDBDBD;
+    margin: 0;
+}
+
+.testimonials-details-separator {
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.testimonials-card-text {
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 120%;
+    height: 309px;
+
+    color: #767474;
+    overflow: hidden;
+}
+
+.testimonials-scroll {
+    padding: 0px 281px 0px 280px;
+    margin-bottom: 31px;
+}
+
+.testimonials-slider {
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+
+    -webkit-appearance: none;
+    outline: none;
+
+    background: linear-gradient(#F5F7F6, #F5F7F6) padding-box,
+    linear-gradient(358deg, #FEBDABBD, #FEBCAEBD, #F3A9F8A8, #E0D8F0, #EAF7FE, #EAF7FE) border-box;
+    border: 0.5px solid transparent;
+}
+
+.testimonials-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 115px;
+    height: 6px;
+    border-radius: 5px; 
+    background: #FE9013;
+    cursor: pointer;
+  }
+
+.testimonials-feedback {
+    border-radius: 5px;
+    margin-bottom: 180px;
+}
+
+#testimonials-bg-image {
+    position: absolute;
+    right: 0px;
+    bottom: -130px;
+}

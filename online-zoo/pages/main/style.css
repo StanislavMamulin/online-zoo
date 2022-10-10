@@ -14,6 +14,7 @@ nav {
     right: 0px;
 
     height: 80px;
+    z-index: 255;
 }
 
 #nav-content {
@@ -747,6 +748,21 @@ opacity: 0.9;
     margin-right: 20px;
 }
 
+#close-menu {
+    display: none;
+}
+
+#veil {
+    display: none;
+    background: rgba(0, 0, 0, 0.75);
+
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 127;
+}
 
 /* max 1000 px screen */
 
@@ -939,10 +955,7 @@ opacity: 0.9;
     
     #logo-description.menu-opened{
         color: #FE9013;
-        font-weight: 400;
         font-size: 15px;
-        line-height: 120%;
-        text-align: center;
 
         margin: 0px 0px;
     }
@@ -971,8 +984,24 @@ opacity: 0.9;
         color: black;
     }
 
+    #designed {
+        margin: 0;
+    }
+
     .hamburger {
         display: block;
+    }
+
+    .hamburger.menu-opened {
+        position: absolute;
+    }
+
+    #close-menu.menu-opened {
+        display: block;
+        position: absolute;
+        top: 11px;
+        right: 0px;
+        margin-right: 22px;
     }
 
     /* Adaptive Pets section */

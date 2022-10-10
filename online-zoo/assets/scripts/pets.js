@@ -133,13 +133,13 @@ export function getRandomPets(numberOfPets) {
 }
 
 export function getPetImagePathByImage(image) {
-    return `/assets/images/pets/${image}.jpg`
+    return `assets/images/pets/${image}.jpg`
 }
 
 export function getDietImgByDietName(diet) {
     if (diet === 'Herbivorous') {
-        return '/assets/icons/banana-bamboo_icon.svg';
+        return 'assets/icons/banana-bamboo_icon.svg';
     }
 
-    return '/assets/icons/meet-fish_icon.svg';
+    return 'assets/icons/meet-fish_icon.svg';
 }

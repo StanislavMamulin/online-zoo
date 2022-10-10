@@ -182,7 +182,7 @@ nav {
 
     margin: 0px auto 0px;
 
-    background-image: url(/assets/images/flower_foto1.png);
+    background-image: url(../../assets/images/flower_foto1.png);
     background-repeat: no-repeat;
     background-position: right top 12px;
     background-clip: border-box;

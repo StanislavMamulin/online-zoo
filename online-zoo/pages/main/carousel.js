@@ -1,86 +1,102 @@
+import { getRandomPets, getPetImagePathByImage, getDietImgByDietName } from '../../assets/scripts/pets.js'
+
 class Carousel {
+	currentPosition = 0;
+	selectors;
+
+	generateNewPets(count = 6) {
+		const imageBlocks = this.selectors.children;
+		for (let i = 0; i < imageBlocks.length; i++) {
+			if (i === this.currentPosition) {
+				continue;
+			}
+			const randomPets = getRandomPets(count);
+
+			// replace image
+			const imageEls = imageBlocks[i].querySelectorAll('.pets-img-wrapper > img');
+
+			for (let imgi = 0; imgi < imageEls.length; imgi++) {
+				imageEls[imgi].outerHTML = `<img src="${getPetImagePathByImage(randomPets[imgi].image)}" alt="pet ${imgi}" class="pets-img"></img>`;
+			}
+
+			// replace info
+			const infoEls = imageBlocks[i].querySelectorAll('.pets-info');
+			for (let infoIndex = 0; infoIndex < infoEls.length; infoIndex++) {
+				const petName = infoEls[infoIndex].querySelector('.pets-name');
+				petName.outerHTML = `<p class="pets-name">${randomPets[infoIndex].name}</p>`
+
+				const petLocation = infoEls[infoIndex].querySelector('.pets-location');
+				petLocation.outerHTML = `<p class="pets-location">${randomPets[infoIndex].location}</p>`
+
+				const petDiet = infoEls[infoIndex].querySelector('.pets-diet');
+				const dietIconPath = getDietImgByDietName(randomPets[infoIndex].diet);
+				petDiet.outerHTML = `<img src="${dietIconPath}" alt="Pets diet" class="pets-diet">`
+			}
+		}
+	}
+
 	constructor(setting) {
-		/* Scope privates methods and properties */
 		let privates = {};
 
-		// Prev slide
 		this.prev_slide = () => {
 			if (!privates.isAnimationEnd) {
 				return;
 			}
-
+			this.generateNewPets();
 			privates.isAnimationEnd = false;
 
-			--privates.opt.position;
+			--this.currentPosition;
 
-			if (privates.opt.position < 0) {
-				privates.selectors.wrap.classList.add('notransition');
-				privates.selectors.wrap.style["transform"] = `translateX(-${privates.opt.max_position}00%)`;
-				privates.opt.position = privates.opt.max_position - 1;
+			if (this.currentPosition < 0) {
+				this.selectors.wrap.classList.add('notransition');
+				this.selectors.wrap.style["transform"] = `translateX(${-privates.opt.max_position * 100}%)`;
+				this.currentPosition = privates.opt.max_position - 1;
 			}
 
 			setTimeout(() => {
-				privates.selectors.wrap.classList.remove('notransition');
-				privates.selectors.wrap.style["transform"] = `translateX(-${privates.opt.position}00%)`;
+				this.selectors.wrap.classList.remove('notransition');
+				this.selectors.wrap.style["transform"] = `translateX(${-this.currentPosition * 100}%)`;
 			}, 10);
 
-			privates.selectors.wrap.addEventListener('transitionend', () => {
+			this.selectors.wrap.addEventListener('transitionend', () => {
 				privates.isAnimationEnd = true;
 			});
 		};
 
-
-		// Next slide
 		this.next_slide = () => {
-			console.log('next slide clicked');
 			// Не реагировать на нажатия при анимации
 			if (!privates.isAnimationEnd) {
 				return;
 			}
 
+			this.generateNewPets();
 			// анимация завершена
 			privates.isAnimationEnd = false;
 
-			console.log('privates.opt.position', privates.opt.position);
-			// если не граничный слайд -> увеличить индекс смещения
-			// opt.position - процент смещения
-			if (privates.opt.position < privates.opt.max_position) {
-				++privates.opt.position;
+			if (this.currentPosition < privates.opt.max_position) {
+				++this.currentPosition;
 			}
 
-			// notransition - устанавливает в 0 transition - зачем?
-			privates.selectors.wrap.classList.remove('notransition');
-			// смещение по Х внутри wrap объекта на opt.position-процент
-			privates.selectors.wrap.style["transform"] = `translateX(-${privates.opt.position}00%)`;
+			this.selectors.wrap.classList.remove('notransition');
 
-			// добавить слушатель события завершения перемещения
-			// в обычном случае установить флаг окончания анимации
-			// в пограничном случае изменить текущее смещение на 0
-			// , установить текущую позицию на первый элемент
-			// TODO добавить перегенерацию зверей в первом блоке
-			privates.selectors.wrap.addEventListener('transitionend', () => {
-				if (privates.opt.position >= privates.opt.max_position) {
-					privates.selectors.wrap.style["transform"] = 'translateX(0)';
-					privates.selectors.wrap.classList.add('notransition');
-					privates.opt.position = 0;
+			this.selectors.wrap.style["transform"] = `translateX(${-this.currentPosition * 100}%)`;
+
+			this.selectors.wrap.addEventListener('transitionend', () => {
+				if (this.currentPosition >= privates.opt.max_position) {
+					this.selectors.wrap.style["transform"] = 'translateX(0)';
+					this.selectors.wrap.classList.add('notransition');
+					this.currentPosition = 0;
 				}
 
 				privates.isAnimationEnd = true;
 			});
-
-			if (privates.setting.autoplay === true) {
-				privates.timer.become();
-			}
 		};
 
-		/* privates properties */
-		privates.default = {};
-
-		privates.setting = Object.assign(privates.default, setting);
+		privates.setting = setting;
 
 		privates.isAnimationEnd = true;
 
-		privates.selectors = {
+		this.selectors = {
 			"wrap": document.querySelector(privates.setting.wrap),
 			"children": document.querySelector(privates.setting.wrap).children,
 			"prev": document.querySelector(privates.setting.prev),
@@ -92,27 +108,27 @@ class Carousel {
 			"max_position": document.querySelector(privates.setting.wrap).children.length
 		};
 
-
-		/* Constructor */
 		// Clone first elem to end wrap
-		privates.selectors.wrap.appendChild(privates.selectors.children[0].cloneNode(true));
+		// this.selectors.wrap.appendChild(this.selectors.children[0].cloneNode(true));
 
 		// Control
-		if (privates.selectors.prev !== null) {
-			privates.selectors.prev.addEventListener('click', () => {
+		if (this.selectors.prev !== null) {
+			this.selectors.prev.addEventListener('click', () => {
 				this.prev_slide();
 			});
 		}
 
-		if (privates.selectors.next !== null) {
-			privates.selectors.next.addEventListener('click', () => {
+		if (this.selectors.next !== null) {
+			this.selectors.next.addEventListener('click', () => {
 				this.next_slide();
 			});
 		}
+
+		this.generateNewPets();
 	}
 }
 
-new Carousel({
+const carousel = new Carousel({
 	"wrap": ".pets-carousel-wrapper",
 	"prev": ".pets-prev-image",
 	"next": ".pets-next-image",

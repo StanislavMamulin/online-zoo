@@ -265,8 +265,6 @@ nav {
     border: none;
     border-radius: 31px;
 
-    margin: 20px;
-
     background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
 }
 
@@ -276,6 +274,18 @@ nav {
 
 .arrow-button:active {
     background: #4B9200;
+}
+
+#pets-prev-image {
+    position: absolute;
+    left: 137px;
+    top: 32.5%;
+}
+
+#pets-next-image {
+    position: absolute;
+    right: 137px;
+    top: 32.5%;
 }
 
 #pets-images-block {
